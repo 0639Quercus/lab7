@@ -33,9 +33,28 @@ string func3(string x){
 	return y;	
 }
 
+string isPalindrome_str(string x){
+	x = func3(x);
+	int len = x.size();
+	bool isPalindrome_bool = true;
+
+	for (int i = 0; i < len; i++) {
+		isPalindrome_bool &= (x[i] == x[len-i-1]);
+	}
+	
+	if(isPalindrome_bool) {
+		return "Yes";
+	} else {
+		return "No";
+	}
+}
+
+
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string str;
+    cout << "Input text: ";
+	cin >> str;
+    cout << "Reversed text: " << func1(str) << endl;
+    cout << "Palindrome: "<< isPalindrome_str(str);
     return 0;
 }
